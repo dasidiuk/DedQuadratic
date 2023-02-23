@@ -6,7 +6,7 @@ void solve_quadratic_equation(double* parameters, double* solution)
     double D = discriminant(parameters);
     if (D < 0)
         solution[0] = -1.0;
-    else if (!D) {
+    else if (!D) { // TODO: Read about double comparison in solve_linear_equation.c  
         solution[0] = 1.0;
         solution[1] = -parameters[1] / (2 * parameters[0]);
     } else {
