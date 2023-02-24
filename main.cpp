@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.h" // TODO: read main.h, no one creates .h for main.cpp
 #include <stdlib.h>
 
 int main()

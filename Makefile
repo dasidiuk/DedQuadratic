@@ -7,6 +7,10 @@ CFLAGS=-D _DEBUG -ggdb3 -std=c++20 -Wall -Wextra -Weffc++ -Wcast-align -Wcast-qu
 TARGET=bin
 BUILD=build
 
+# Nooo! I meant you should read how to express .o compilations shorter in Makefile, not to get rid of them 
+# You've just killed your incremental compilation (when you recompile only what has changed)
+
+# If you've done this in a bigger project, you would have easily 100x compilation time 
 all:
 	$(CC) $(CFLAGS) solve_quadratic_equation.cpp solve_linear_equation.cpp solve_equation.cpp read_coefficients.cpp print_solution.cpp main.cpp -o $(TARGET)
 

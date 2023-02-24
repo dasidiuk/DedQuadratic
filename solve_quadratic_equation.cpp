@@ -9,7 +9,7 @@ solution solve_quadratic_equation(coefficients coefficients)
     double D = coefficients.b * coefficients.b - 4 * coefficients.a * coefficients.c;
     if (D < 0)
         solution.flag = -1;
-    else if (fabs(D) < EPSILON) {
+    else if (fabs(D) < EPSILON) { // TODO: extract, read solve_equation.cpp 
         solution.flag = 1;
         solution.x1 = -coefficients.b / (2 * coefficients.a);
     } else {
