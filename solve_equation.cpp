@@ -1,6 +1,8 @@
 #include "solve_equation.h"
 #include <math.h>
 
+// TODO: this .cpp file is insufficient, read print_solution.cpp,
+
 solution solve_equation(coefficients coefficients)
 {
     /* Solves equations of the form Ax^2 + Bx + C = 0, where A, B and C are
@@ -13,6 +15,8 @@ solution solve_equation(coefficients coefficients)
     const float EPSILON = 1e-9f;
     solution solution;
     if (fabs(coefficients.a) < EPSILON) {
+    //  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TODO: This is a common thing to do, extract in function
+
         solution = solve_linear_equation(coefficients);
     } else {
         solution = solve_quadratic_equation(coefficients);

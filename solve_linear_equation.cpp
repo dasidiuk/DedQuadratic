@@ -1,9 +1,11 @@
 #include "solve_equation.h"
 
+// TODO: this .cpp file is insufficient, read print_solution.cpp
+
 solution solve_linear_equation(coefficients coefficients)
 {
     solution solution;
-    if (coefficients.b) {
+    if (coefficients.b) { // TODO: still checking for zero without epsilon?
         solution.flag = 1;
         solution.x1 = -coefficients.c / coefficients.b;
     } else {
