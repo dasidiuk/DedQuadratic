@@ -1,15 +1,18 @@
 #include "compare_floats.h"
 #include <cmath>
 
-bool is_equal(double a, double b)
+int compare_floats(double a, double b)
 {
-    return fabs(a - b) < EPSILON;
+    // Knuth's algorithm
+    if (fabs(a - b) <= ((fabs(a) > fabs(b) ? fabs(b) : fabs(a)) * EPSILON)) // If "a" is equal to "b"
+        return 0;
+    else if ((a - b) > ((fabs(a) < fabs(b) ? fabs(b) : fabs(a)) * EPSILON)) // If "a" is definitely greater than "b"
+        return 1;
+    else
+        return -1;
 }
-bool is_less(double a, double b)
+
+bool is_zero(double a)
 {
-    return a - b < EPSILON;
-}
-bool is_greater(double a, double b)
-{
-    return a - b > EPSILON;
+    return fabs(a) <= EPSILON;
 }

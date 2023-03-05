@@ -19,5 +19,7 @@ typedef struct coefficients {
 } coefficients;
 
 solution solve_equation(coefficients coefficients);
+solution solve_linear_equation(coefficients coefficients);
+solution solve_quadratic_equation(coefficients coefficients);
 
 #endif // SOLVE_EQUATION_H_

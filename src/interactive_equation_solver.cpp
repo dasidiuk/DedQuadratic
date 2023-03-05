@@ -1,12 +1,14 @@
-#include "solve_equation_interactively.h" // NOTE: read main.cpp
+#include "../lib/solve_equation.h"
 #include <cassert>
 #include <cstdio>
 
-void solve_equation_interactively(coefficients* coefficients)
+int main()
 {
-    scanf("%lf %lf %lf", &coefficients->a, &coefficients->b, &coefficients->c);
+    coefficients coefficients;
 
-    solution solution = solve_equation(*coefficients);
+    scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c);
+
+    solution solution = solve_equation(coefficients);
 
     switch (solution.solution_type) {
     case (no_roots):
