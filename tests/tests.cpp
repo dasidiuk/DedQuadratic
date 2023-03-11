@@ -1,7 +1,6 @@
 #include "../lib/compare_floats.h"
 #include "../lib/solve_equation.h"
 #include <cstdio>
-#include <math.h>
 #include <string.h>
 
 #define GREEN "\033[32m"
@@ -68,7 +67,7 @@ void do_test(coefficients coefficients, solution expected)
     }
 
     if (calculated.solution_type == expected.solution_type && ((!compare_floats(expected.x2, calculated.x1) && !compare_floats(expected.x1, calculated.x2)) || (!compare_floats(expected.x1, calculated.x1) && !compare_floats(expected.x2, calculated.x2))))
-        printf(GREEN "✔" NORMAL "  %lf %lf %lf " GREEN "->" NORMAL " %s: x = %lf, x = %lf\n", coefficients.a, coefficients.b, coefficients.c, calculated_solution_type, calculated.x1, calculated.x2);
+        printf(GREEN "✔" NORMAL "  %.9g %.9g %.9g " GREEN "->" NORMAL " %s: x = %.9g, x = %.9g\n", coefficients.a, coefficients.b, coefficients.c, calculated_solution_type, calculated.x1, calculated.x2);
     else
-        printf(MAGENTA "✘" NORMAL "  %lf %lf %lf " MAGENTA "->" NORMAL " " STRIKETHROUGH_BEGIN MAGENTA "%s: x = %lf, x = %lf" NORMAL STRIKETHROUGH_END " %s: x = %lf, x = %lf\n", coefficients.a, coefficients.b, coefficients.c, calculated_solution_type, calculated.x1, calculated.x2, expected_solution_type, expected.x1, expected.x2);
+        printf(MAGENTA "✘" NORMAL "  %.9g %.9g %.9g " MAGENTA "->" NORMAL " " STRIKETHROUGH_BEGIN MAGENTA "%s: x = %.9g, x = %.9g" NORMAL STRIKETHROUGH_END " %s: x = %.9g, x = %.9g\n", coefficients.a, coefficients.b, coefficients.c, calculated_solution_type, calculated.x1, calculated.x2, expected_solution_type, expected.x1, expected.x2);
 }

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Library to solve the equations of the form Ax^2 + Bx + C = 0
+ */
+
 #include "solve_equation.h"
 #include "compare_floats.h"
 #include <cmath>
@@ -5,18 +10,6 @@
 
 solution solve_equation(coefficients coefficients)
 {
-    // ========================================================================
-    // Solves equations of the form Ax^2 + Bx + C = 0, where A, B and C are
-    // elements of the "coefficients" structure. Functions returns the solution
-    // structure with the following fields:
-    //     solution_type: -1 - the equation has no solutions;
-    //                     0 - infinitely many solutions;
-    //                     1 - only one solution;
-    //                     2 - there are two possible solutions.
-    //     x1 - first possible solution.
-    //     x2 - second possible solution.
-    // ========================================================================
-
     solution solution;
     if (is_zero(coefficients.a))
         solution = solve_linear_equation(coefficients);
