@@ -1,5 +1,5 @@
 ##
-# quadratic_equation
+# Interactive Equation Solver
 #
 
 CXX=clang++
@@ -9,14 +9,19 @@ RM=rm -rf
 SRC_DIR=src
 LIB_DIR=lib
 BUILD_DIR=build
+TESTS_DIR=tests
 
 SRCS=$(wildcard $(SRC_DIR)/*.cpp)
 LIBS=$(wildcard $(LIB_DIR)/*.cpp)
 OBJS=$(addprefix $(BUILD_DIR)/,$(patsubst %.cpp,%.o,$(notdir $(LIBS)) $(notdir $(SRCS))))
+TESTS=$(BUILD_DIR)/check
 TARGET=$(BUILD_DIR)/bin
 
-all: $(TARGET)
+all: $(TARGET) $(TESTS)
 
+#
+# Building the target
+##
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $@
 
@@ -28,8 +33,20 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
+#
+# Building tests
+##
+$(TESTS): $(BUILD_DIR)/tests.o $(BUILD_DIR)/compare_floats.o $(BUILD_DIR)/solve_equation.o
+	$(CXX) $(BUILD_DIR)/compare_floats.o $(BUILD_DIR)/solve_equation.o $(BUILD_DIR)/tests.o -o $@
+
+$(BUILD_DIR)/%.o: $(TESTS_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
 exec:
 	$(TARGET)
+
+check:
+	$(TESTS)
 
 clean:
 	$(RM) $(BUILD_DIR)/*

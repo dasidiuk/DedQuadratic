@@ -1,12 +1,16 @@
 #include "../lib/solve_equation.h"
 #include <cassert>
+#include <cmath>
 #include <cstdio>
 
 int main()
 {
     coefficients coefficients;
 
-    scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c);
+    if (scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) != 3 || std::isnan(coefficients.a) || std::isnan(coefficients.b) || std::isnan(coefficients.c) || std::isinf(coefficients.a) || std::isinf(coefficients.b) || std::isinf(coefficients.c)) {
+        printf("Invalid input.\n");
+        return 1;
+    }
 
     solution solution = solve_equation(coefficients);
 
