@@ -20,7 +20,7 @@ int main()
         return 1;
     }
 
-    printf("\nThe equation %.9gx^2 %s %.9gx %s %.9g = 0 ", coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c));
+    printf("\nThe equation \033[1m%.9gx^2 %s %.9gx %s %.9g = 0\033[0m ", coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c));
 
     //! Solve the equation with taken coefficients
     solution solution = solve_equation(coefficients);
