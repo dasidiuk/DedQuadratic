@@ -48,11 +48,11 @@ void print_solution(enum solution_types solution_type, double x1, double x2)
         break;
 
     case (one_root):
-        printf("has one possible solution:\nx = %lf\n", x1);
+        printf("has one possible solution:\nx = %g\n", x1);
         break;
 
     case (two_roots):
-        printf("has two possible solutions:\nx = %lf or x = %lf\n", x1, x2);
+        printf("has two possible solutions:\nx = %g or x = %g\n", x1, x2);
         break;
 
     default:
