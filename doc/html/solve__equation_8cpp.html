@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('solve__equation_8cpp.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>Library to solve the equations of the form Ax^2 + Bx + C = 0.  
+<p>Library implementing functions for solving quadratic and linear equations.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;solve_equation.h&quot;</code><br />
 <code>#include &quot;compare_floats.h&quot;</code><br />
@@ -115,54 +115,24 @@ $(document).ready(function(){initNavTree('solve__equation_8cpp.html',''); initRe
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a20b0c267e1faa1ddc2e799a7f2d5f5a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsolution.html">solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#a20b0c267e1faa1ddc2e799a7f2d5f5a2">solve_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
-<tr class="memdesc:a20b0c267e1faa1ddc2e799a7f2d5f5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves equations of the form Ax^2 + Bx + C = 0.  <br /></td></tr>
-<tr class="separator:a20b0c267e1faa1ddc2e799a7f2d5f5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90e9196df5de60daac4cf5bea08dd03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsolution.html">solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#aa90e9196df5de60daac4cf5bea08dd03">solve_linear_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
-<tr class="memdesc:aa90e9196df5de60daac4cf5bea08dd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves linear equation.  <br /></td></tr>
-<tr class="separator:aa90e9196df5de60daac4cf5bea08dd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c86e108ca4903f9915211891194ade"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsolution.html">solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#a31c86e108ca4903f9915211891194ade">solve_quadratic_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
-<tr class="memdesc:a31c86e108ca4903f9915211891194ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves quadratic equations.  <br /></td></tr>
-<tr class="separator:a31c86e108ca4903f9915211891194ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd82cc1e200821d7d3ec3217fb9466f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlinear__solution.html">linear_solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#afd82cc1e200821d7d3ec3217fb9466f0">solve_linear_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
+<tr class="memdesc:afd82cc1e200821d7d3ec3217fb9466f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves linear equation.  <br /></td></tr>
+<tr class="separator:afd82cc1e200821d7d3ec3217fb9466f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2038037e97753b96e523b9c41c873b68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structquadratic__solution.html">quadratic_solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#a2038037e97753b96e523b9c41c873b68">solve_quadratic_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
+<tr class="memdesc:a2038037e97753b96e523b9c41c873b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves quadratic equations.  <br /></td></tr>
+<tr class="separator:a2038037e97753b96e523b9c41c873b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Library to solve the equations of the form Ax^2 + Bx + C = 0. </p>
+<div class="textblock"><p>Library implementing functions for solving quadratic and linear equations. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a20b0c267e1faa1ddc2e799a7f2d5f5a2" name="a20b0c267e1faa1ddc2e799a7f2d5f5a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20b0c267e1faa1ddc2e799a7f2d5f5a2">&#9670;&#160;</a></span>solve_equation()</h2>
+<a id="afd82cc1e200821d7d3ec3217fb9466f0" name="afd82cc1e200821d7d3ec3217fb9466f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd82cc1e200821d7d3ec3217fb9466f0">&#9670;&#160;</a></span>solve_linear_equation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structsolution.html">solution</a> solve_equation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structcoefficients.html">coefficients</a>&#160;</td>
-          <td class="paramname"><em>coefficients</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Solves equations of the form Ax^2 + Bx + C = 0. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">coefficients</td><td>the equation's <a class="el" href="structcoefficients.html">coefficients</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structsolution.html">solution</a> structure </dd></dl>
-
-</div>
-</div>
-<a id="aa90e9196df5de60daac4cf5bea08dd03" name="aa90e9196df5de60daac4cf5bea08dd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa90e9196df5de60daac4cf5bea08dd03">&#9670;&#160;</a></span>solve_linear_equation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsolution.html">solution</a> solve_linear_equation </td>
+          <td class="memname"><a class="el" href="structlinear__solution.html">linear_solution</a> solve_linear_equation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structcoefficients.html">coefficients</a>&#160;</td>
           <td class="paramname"><em>coefficients</em></td><td>)</td>
@@ -179,18 +149,18 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structsolution.html">solution</a> structure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structlinear__solution.html">linear_solution</a> structure </dd></dl>
 
 </div>
 </div>
-<a id="a31c86e108ca4903f9915211891194ade" name="a31c86e108ca4903f9915211891194ade"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31c86e108ca4903f9915211891194ade">&#9670;&#160;</a></span>solve_quadratic_equation()</h2>
+<a id="a2038037e97753b96e523b9c41c873b68" name="a2038037e97753b96e523b9c41c873b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2038037e97753b96e523b9c41c873b68">&#9670;&#160;</a></span>solve_quadratic_equation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structsolution.html">solution</a> solve_quadratic_equation </td>
+          <td class="memname"><a class="el" href="structquadratic__solution.html">quadratic_solution</a> solve_quadratic_equation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structcoefficients.html">coefficients</a>&#160;</td>
           <td class="paramname"><em>coefficients</em></td><td>)</td>
@@ -207,7 +177,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structsolution.html">solution</a> structure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structquadratic__solution.html">quadratic_solution</a> structure </dd></dl>
 
 </div>
 </div>

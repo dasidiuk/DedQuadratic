@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadratic_0',['Quadratic',['../index.html',1,'']]]
+  ['linear_5fsolution_0',['linear_solution',['../structlinear__solution.html',1,'']]]
 ];

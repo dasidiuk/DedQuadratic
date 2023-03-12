@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Library to solve the equations of the form Ax^2 + Bx + C = 0
+ * @brief Library implementing functions for solving quadratic and linear equations.
  */
 
 #include "solve_equation.h"
@@ -8,31 +8,21 @@
 #include <cmath>
 #include <cstdio>
 
-solution solve_equation(coefficients coefficients)
+linear_solution solve_linear_equation(coefficients coefficients)
 {
-    solution solution;
-    if (is_zero(coefficients.a))
-        solution = solve_linear_equation(coefficients);
-    else
-        solution = solve_quadratic_equation(coefficients);
-    return solution;
-}
-
-solution solve_linear_equation(coefficients coefficients)
-{
-    solution solution;
+    linear_solution solution;
     if (!is_zero(coefficients.b)) {
         solution.solution_type = one_root;
-        solution.x1 = -coefficients.c / coefficients.b;
+        solution.x = -coefficients.c / coefficients.b;
     } else {
         solution.solution_type = is_zero(coefficients.c) ? any_value : no_roots;
     }
     return solution;
 }
 
-solution solve_quadratic_equation(coefficients coefficients)
+quadratic_solution solve_quadratic_equation(coefficients coefficients)
 {
-    solution solution;
+    quadratic_solution solution;
     double D = coefficients.b * coefficients.b - 4 * coefficients.a * coefficients.c;
     if (is_zero(D)) {
         solution.solution_type = one_root;

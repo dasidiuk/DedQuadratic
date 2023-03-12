@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solution_0',['solution',['../structsolution.html',1,'']]]
+  ['linear_5fsolution_0',['linear_solution',['../structlinear__solution.html',1,'']]]
 ];

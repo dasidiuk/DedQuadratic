@@ -3,10 +3,13 @@
  * @brief Implements the console interface for the \ref solve_equation.h library.
  */
 
+#include "../lib/compare_floats.h"
 #include "../lib/solve_equation.h"
 #include <cassert>
 #include <cmath>
 #include <cstdio>
+
+void print_solution(enum solution_types solution_type, double x1, double x2);
 
 int main()
 {
@@ -23,10 +26,19 @@ int main()
     printf("\nThe equation \033[1m%.9gx^2 %s %.9gx %s %.9g = 0\033[0m ", coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c));
 
     //! Solve the equation with taken coefficients
-    solution solution = solve_equation(coefficients);
+    if (is_zero(coefficients.a)) {
+        linear_solution solution = solve_linear_equation(coefficients);
+        print_solution(solution.solution_type, solution.x, 0);
+    } else {
+        quadratic_solution solution = solve_quadratic_equation(coefficients);
+        print_solution(solution.solution_type, solution.x1, solution.x2);
+    }
+}
 
-    //! Prints the answer depending on the solution's type
-    switch (solution.solution_type) {
+//! Prints the solution depending on it's type
+void print_solution(enum solution_types solution_type, double x1, double x2)
+{
+    switch (solution_type) {
     case (no_roots):
         printf("has no solutions on the set of real numbers.\n");
         break;
@@ -36,11 +48,11 @@ int main()
         break;
 
     case (one_root):
-        printf("has one possible solution:\nx = %lf\n", solution.x1);
+        printf("has one possible solution:\nx = %lf\n", x1);
         break;
 
     case (two_roots):
-        printf("has two possible solutions:\nx = %lf or x = %lf\n", solution.x1, solution.x2);
+        printf("has two possible solutions:\nx = %lf or x = %lf\n", x1, x2);
         break;
 
     default:

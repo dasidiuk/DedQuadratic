@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadratic_0',['Quadratic',['../index.html',1,'']]]
+  ['dedquadratic_0',['DedQuadratic',['../index.html',1,'']]]
 ];
