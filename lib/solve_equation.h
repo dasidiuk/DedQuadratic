@@ -9,14 +9,14 @@ enum solution_types {
     two_roots, ///< The equation has no possible solutions
 };
 
-//! The structure returned as the solution to the quadratic equation.
+//! The structure returned as the solution to a quadratic equation.
 typedef struct quadratic_solution {
     enum solution_types solution_type; ///< Returned type of the solution
     double x1 = 0; ///< The value of a first possible solution
     double x2 = 0; ///< The value of a second possible solution
 } quadratic_solution;
 
-//! The structure returned as the solution to the linear equation.
+//! The structure returned as the solution to a linear equation.
 typedef struct linear_solution {
     enum solution_types solution_type; ///< Returned type of the solution
     double x = 0; ///< The value of a possible solution
