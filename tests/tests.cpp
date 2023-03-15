@@ -1,6 +1,6 @@
-#include "../lib/ansi_colors.h"
-#include "../lib/compare_floats.h"
-#include "../lib/solve_equation.h"
+#include "ansi_colors.h"
+#include "compare_floats.h"
+#include "solve_equation.h"
 #include <math.h>
 #include <stdio.h>
 #include <string.h>

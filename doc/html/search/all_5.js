@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print_5fsolution_0',['print_solution',['../interactive__equation__solver_8cpp.html#ae072063cb1b11d05523fc3783cb16cfb',1,'interactive_equation_solver.cpp']]]
+  ['quadratic_5fcoefficients_0',['quadratic_coefficients',['../structquadratic__coefficients.html',1,'']]],
+  ['quadratic_5fsolution_1',['quadratic_solution',['../structquadratic__solution.html',1,'']]]
 ];

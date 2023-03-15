@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linear_5fsolution_0',['linear_solution',['../structlinear__solution.html',1,'']]]
+  ['quadratic_5fcoefficients_0',['quadratic_coefficients',['../structquadratic__coefficients.html',1,'']]],
+  ['quadratic_5fsolution_1',['quadratic_solution',['../structquadratic__solution.html',1,'']]]
 ];

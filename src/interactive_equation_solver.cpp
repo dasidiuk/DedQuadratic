@@ -4,8 +4,8 @@
  */
 
 // TODO: get rid of relative paths
-#include "../lib/compare_floats.h"
-#include "../lib/solve_equation.h"
+#include "compare_floats.h"
+#include "solve_equation.h"
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../interactive__equation__solver_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'interactive_equation_solver.cpp']]]
+  ['print_5fsolution_0',['print_solution',['../interactive__equation__solver_8cpp.html#a50e1c6597342d4f9b25f15e107c9b432',1,'interactive_equation_solver.cpp']]]
 ];

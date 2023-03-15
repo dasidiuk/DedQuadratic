@@ -106,38 +106,56 @@ $(document).ready(function(){initNavTree('solve__equation_8h_source.html',''); i
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SOLVE_EQUATION_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SOLVE_EQUATION_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">enum</span> solution_types {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    no_roots,</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    one_root,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    two_roots,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    any_value,</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">enum</span> solution_type {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    no_roots = 0,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    one_root = 1,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    two_roots = 2,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    any_value = 3,</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structquadratic__solution.html">   11</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">enum</span> solution_types solution_type;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">double</span> x1 = 0;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">double</span> x2 = 0;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>} <a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structlinear__solution.html">   17</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structlinear__solution.html">linear_solution</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">enum</span> solution_types solution_type;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">double</span> x = 0;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} <a class="code hl_struct" href="structlinear__solution.html">linear_solution</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structcoefficients.html">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structcoefficients.html">coefficients</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">double</span> a, b, c;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="structcoefficients.html">coefficients</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">enum</span> roots {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    first = 0,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    second = 1,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structquadratic__solution.html">   16</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">enum</span> solution_type solution_type;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">double</span> roots[2];</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>} <a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structlinear__solution.html">   21</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structlinear__solution.html">linear_solution</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">enum</span> solution_type solution_type;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">double</span> x = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="structlinear__solution.html">linear_solution</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_struct" href="structlinear__solution.html">linear_solution</a> <a class="code hl_function" href="solve__equation_8cpp.html#afd82cc1e200821d7d3ec3217fb9466f0">solve_linear_equation</a>(<a class="code hl_struct" href="structcoefficients.html">coefficients</a> <a class="code hl_struct" href="structcoefficients.html">coefficients</a>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a> <a class="code hl_function" href="solve__equation_8cpp.html#a2038037e97753b96e523b9c41c873b68">solve_quadratic_equation</a>(<a class="code hl_struct" href="structcoefficients.html">coefficients</a> <a class="code hl_struct" href="structcoefficients.html">coefficients</a>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// SOLVE_EQUATION_H_</span></div>
-<div class="ttc" id="asolve__equation_8cpp_html_a2038037e97753b96e523b9c41c873b68"><div class="ttname"><a href="solve__equation_8cpp.html#a2038037e97753b96e523b9c41c873b68">solve_quadratic_equation</a></div><div class="ttdeci">quadratic_solution solve_quadratic_equation(coefficients coefficients)</div><div class="ttdoc">Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:23</div></div>
-<div class="ttc" id="asolve__equation_8cpp_html_afd82cc1e200821d7d3ec3217fb9466f0"><div class="ttname"><a href="solve__equation_8cpp.html#afd82cc1e200821d7d3ec3217fb9466f0">solve_linear_equation</a></div><div class="ttdeci">linear_solution solve_linear_equation(coefficients coefficients)</div><div class="ttdoc">Solve equations of the form A + Bx + C = 0, where A is equal to zero.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:11</div></div>
-<div class="ttc" id="astructcoefficients_html"><div class="ttname"><a href="structcoefficients.html">coefficients</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:22</div></div>
-<div class="ttc" id="astructlinear__solution_html"><div class="ttname"><a href="structlinear__solution.html">linear_solution</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:17</div></div>
-<div class="ttc" id="astructquadratic__solution_html"><div class="ttname"><a href="structquadratic__solution.html">quadratic_solution</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:11</div></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structquadratic__coefficients.html">   26</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structquadratic__coefficients.html">quadratic_coefficients</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">double</span> a, b, c;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>} <a class="code hl_struct" href="structquadratic__coefficients.html">quadratic_coefficients</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structlinear__coefficients.html">   30</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structlinear__coefficients.html">linear_coefficients</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">double</span> a, b;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <a class="code hl_struct" href="structlinear__coefficients.html">linear_coefficients</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a> <a class="code hl_function" href="solve__equation_8cpp.html#a43e279ebef7f7508670df21858d7c626">solve_equation</a>(<a class="code hl_struct" href="structquadratic__coefficients.html">quadratic_coefficients</a> coefficients);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><a class="code hl_struct" href="structlinear__solution.html">linear_solution</a> <a class="code hl_function" href="solve__equation_8cpp.html#a9d3903c9ce917c6753b47bd7297936ac">solve_linear_equation</a>(<a class="code hl_struct" href="structlinear__coefficients.html">linear_coefficients</a> coefficients);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="structquadratic__solution.html">quadratic_solution</a> <a class="code hl_function" href="solve__equation_8cpp.html#aac6b6fbdc495055dde86868b8fcf6459">solve_quadratic_equation</a>(<a class="code hl_struct" href="structquadratic__coefficients.html">quadratic_coefficients</a> coefficients);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> <a class="code hl_function" href="solve__equation_8cpp.html#a0ce4e7daec81b385ec6610a5b6710d54">validate_quadratic_coefficients</a>(<a class="code hl_struct" href="structquadratic__coefficients.html">quadratic_coefficients</a> coefficients);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="solve__equation_8cpp.html#abf92f0fecbd7d5aebdd16873e22b9654">validate_linear_coefficients</a>(<a class="code hl_struct" href="structlinear__coefficients.html">linear_coefficients</a> coefficients);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// SOLVE_EQUATION_H_</span></div>
+<div class="ttc" id="asolve__equation_8cpp_html_a0ce4e7daec81b385ec6610a5b6710d54"><div class="ttname"><a href="solve__equation_8cpp.html#a0ce4e7daec81b385ec6610a5b6710d54">validate_quadratic_coefficients</a></div><div class="ttdeci">void validate_quadratic_coefficients(quadratic_coefficients coefficients)</div><div class="ttdoc">Validate quadratic coefficients for NaN and Inf.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:12</div></div>
+<div class="ttc" id="asolve__equation_8cpp_html_a43e279ebef7f7508670df21858d7c626"><div class="ttname"><a href="solve__equation_8cpp.html#a43e279ebef7f7508670df21858d7c626">solve_equation</a></div><div class="ttdeci">quadratic_solution solve_equation(quadratic_coefficients coefficients)</div><div class="ttdoc">Solve equations of the form Ax^2 + Bx + C = 0.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:40</div></div>
+<div class="ttc" id="asolve__equation_8cpp_html_a9d3903c9ce917c6753b47bd7297936ac"><div class="ttname"><a href="solve__equation_8cpp.html#a9d3903c9ce917c6753b47bd7297936ac">solve_linear_equation</a></div><div class="ttdeci">linear_solution solve_linear_equation(linear_coefficients coefficients)</div><div class="ttdoc">Solve equations of the form Ax + B = 0.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:53</div></div>
+<div class="ttc" id="asolve__equation_8cpp_html_aac6b6fbdc495055dde86868b8fcf6459"><div class="ttname"><a href="solve__equation_8cpp.html#aac6b6fbdc495055dde86868b8fcf6459">solve_quadratic_equation</a></div><div class="ttdeci">quadratic_solution solve_quadratic_equation(quadratic_coefficients coefficients)</div><div class="ttdoc">Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:66</div></div>
+<div class="ttc" id="asolve__equation_8cpp_html_abf92f0fecbd7d5aebdd16873e22b9654"><div class="ttname"><a href="solve__equation_8cpp.html#abf92f0fecbd7d5aebdd16873e22b9654">validate_linear_coefficients</a></div><div class="ttdeci">void validate_linear_coefficients(linear_coefficients coefficients)</div><div class="ttdoc">Validate linear coefficients for NaN and Inf.</div><div class="ttdef"><b>Definition:</b> solve_equation.cpp:27</div></div>
+<div class="ttc" id="astructlinear__coefficients_html"><div class="ttname"><a href="structlinear__coefficients.html">linear_coefficients</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:30</div></div>
+<div class="ttc" id="astructlinear__solution_html"><div class="ttname"><a href="structlinear__solution.html">linear_solution</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:21</div></div>
+<div class="ttc" id="astructquadratic__coefficients_html"><div class="ttname"><a href="structquadratic__coefficients.html">quadratic_coefficients</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:26</div></div>
+<div class="ttc" id="astructquadratic__solution_html"><div class="ttname"><a href="structquadratic__solution.html">quadratic_solution</a></div><div class="ttdef"><b>Definition:</b> solve_equation.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

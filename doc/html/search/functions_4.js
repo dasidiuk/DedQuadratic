@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['solve_5flinear_5fequation_0',['solve_linear_equation',['../solve__equation_8cpp.html#afd82cc1e200821d7d3ec3217fb9466f0',1,'solve_equation.cpp']]],
-  ['solve_5fquadratic_5fequation_1',['solve_quadratic_equation',['../solve__equation_8cpp.html#a2038037e97753b96e523b9c41c873b68',1,'solve_equation.cpp']]]
+  ['validate_5flinear_5fcoefficients_0',['validate_linear_coefficients',['../solve__equation_8cpp.html#abf92f0fecbd7d5aebdd16873e22b9654',1,'solve_equation.cpp']]],
+  ['validate_5fquadratic_5fcoefficients_1',['validate_quadratic_coefficients',['../solve__equation_8cpp.html#a0ce4e7daec81b385ec6610a5b6710d54',1,'solve_equation.cpp']]]
 ];

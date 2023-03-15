@@ -58,4 +58,18 @@ linear_solution solve_linear_equation(linear_coefficients coefficients);
  */
 quadratic_solution solve_quadratic_equation(quadratic_coefficients coefficients);
 
+/**
+ * @brief Validate quadratic coefficients for NaN and Inf
+ *
+ * @param[in] coefficients
+ */
+void validate_quadratic_coefficients(quadratic_coefficients coefficients);
+
+/**
+ * @brief Validate linear coefficients for NaN and Inf
+ *
+ * @param[in] coefficients
+ */
+void validate_linear_coefficients(linear_coefficients coefficients);
+
 #endif // SOLVE_EQUATION_H_
