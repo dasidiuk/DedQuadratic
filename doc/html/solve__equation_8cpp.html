@@ -106,24 +106,24 @@ $(document).ready(function(){initNavTree('solve__equation_8cpp.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>Library implementing functions for solving quadratic and linear equations.  
+<p>Solve linear and quadratic equations.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;solve_equation.h&quot;</code><br />
 <code>#include &quot;compare_floats.h&quot;</code><br />
-<code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afd82cc1e200821d7d3ec3217fb9466f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlinear__solution.html">linear_solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#afd82cc1e200821d7d3ec3217fb9466f0">solve_linear_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
-<tr class="memdesc:afd82cc1e200821d7d3ec3217fb9466f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves linear equation.  <br /></td></tr>
+<tr class="memdesc:afd82cc1e200821d7d3ec3217fb9466f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve equations of the form A + Bx + C = 0, where A is equal to zero.  <br /></td></tr>
 <tr class="separator:afd82cc1e200821d7d3ec3217fb9466f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2038037e97753b96e523b9c41c873b68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structquadratic__solution.html">quadratic_solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__equation_8cpp.html#a2038037e97753b96e523b9c41c873b68">solve_quadratic_equation</a> (<a class="el" href="structcoefficients.html">coefficients</a> <a class="el" href="structcoefficients.html">coefficients</a>)</td></tr>
-<tr class="memdesc:a2038037e97753b96e523b9c41c873b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves quadratic equations.  <br /></td></tr>
+<tr class="memdesc:a2038037e97753b96e523b9c41c873b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero.  <br /></td></tr>
 <tr class="separator:a2038037e97753b96e523b9c41c873b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Library implementing functions for solving quadratic and linear equations. </p>
+<div class="textblock"><p>Solve linear and quadratic equations. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="afd82cc1e200821d7d3ec3217fb9466f0" name="afd82cc1e200821d7d3ec3217fb9466f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd82cc1e200821d7d3ec3217fb9466f0">&#9670;&#160;</a></span>solve_linear_equation()</h2>
@@ -141,15 +141,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Solves linear equation. </p>
-<p>Solves equations of the form A + Bx + C = 0, where A is equal to zero</p>
+<p>Solve equations of the form A + Bx + C = 0, where A is equal to zero. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coefficients</td><td>the equation's <a class="el" href="structcoefficients.html">coefficients</a></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coefficients</td><td>the equation's <a class="el" href="structcoefficients.html">coefficients</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structlinear__solution.html">linear_solution</a> structure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>solution </dd></dl>
 
 </div>
 </div>
@@ -169,15 +168,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Solves quadratic equations. </p>
-<p>Solves equations of the form Ax^2 + Bx + C = 0, where A is not zero</p>
+<p>Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coefficients</td><td>the equation's <a class="el" href="structcoefficients.html">coefficients</a></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coefficients</td><td>the equation's <a class="el" href="structcoefficients.html">coefficients</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structquadratic__solution.html">quadratic_solution</a> structure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>solution </dd></dl>
 
 </div>
 </div>

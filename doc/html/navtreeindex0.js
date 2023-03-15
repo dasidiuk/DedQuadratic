@@ -9,8 +9,6 @@ var NAVTREEINDEX0 =
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[5,0,1],
 "dir_97aefd0d527b934f1d99a682da8fe6a9.html":[5,0,0],
 "files.html":[5,0],
-"functions.html":[4,2,0],
-"functions_vars.html":[4,2,1],
 "globals.html":[5,1,0],
 "globals_func.html":[5,1,1],
 "index.html":[],
@@ -28,10 +26,5 @@ var NAVTREEINDEX0 =
 "solve__equation_8h_source.html":[5,0,0,3],
 "structcoefficients.html":[4,0,0],
 "structlinear__solution.html":[4,0,1],
-"structlinear__solution.html#a26543e1bb2ff1792f5bacecac9f5d98b":[4,0,1,1],
-"structlinear__solution.html#ad4869610103db869471b56c8a62a4442":[4,0,1,0],
-"structquadratic__solution.html":[4,0,2],
-"structquadratic__solution.html#a6126ebf60cc8cd45e333dd0b7f29be96":[4,0,2,2],
-"structquadratic__solution.html#a7156504893edc690ab8561523e84ea98":[4,0,2,0],
-"structquadratic__solution.html#acf8b0e1331c91c4c1c7d465c16d6741f":[4,0,2,1]
+"structquadratic__solution.html":[4,0,2]
 };

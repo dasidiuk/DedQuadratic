@@ -14,6 +14,7 @@ const float EPSILON = 1e-9f;
  *         - -1 — a is less than b
  */
 int compare_floats(double a, double b);
+
 /**
  * @brief Check if a floating point number is zero, accurate to \ref EPSILON.
  */

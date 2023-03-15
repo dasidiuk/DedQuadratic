@@ -4,7 +4,7 @@
  */
 
 #include "compare_floats.h"
-#include <cmath>
+#include <math.h>
 
 int compare_floats(double a, double b)
 {

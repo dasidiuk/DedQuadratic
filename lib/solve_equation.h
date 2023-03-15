@@ -1,52 +1,61 @@
 #ifndef SOLVE_EQUATION_H_
 #define SOLVE_EQUATION_H_
 
-//! Defines the type of a solution
-enum solution_types {
-    no_roots, ///< The equation has no solutions
-    any_value, ///< The solution can take any value
-    one_root, ///< The equation has one possible solution
-    two_roots, ///< The equation has no possible solutions
+enum solution_type {
+    no_roots = 0,
+    one_root = 1,
+    two_roots = 2,
+    any_value = 3,
 };
 
-//! The structure returned as the solution to a quadratic equation.
+enum roots {
+    first = 0,
+    second = 1,
+};
+
 typedef struct quadratic_solution {
-    enum solution_types solution_type; ///< Returned type of the solution
-    double x1 = 0; ///< The value of a first possible solution
-    double x2 = 0; ///< The value of a second possible solution
+    enum solution_type solution_type;
+    double roots[2];
 } quadratic_solution;
 
-//! The structure returned as the solution to a linear equation.
 typedef struct linear_solution {
-    enum solution_types solution_type; ///< Returned type of the solution
-    double x = 0; ///< The value of a possible solution
+    enum solution_type solution_type;
+    double x = 0;
 } linear_solution;
 
-//! A structure containing the A, B and C coefficients of the equation
-typedef struct coefficients {
+typedef struct quadratic_coefficients {
     double a, b, c;
-} coefficients;
+} quadratic_coefficients;
+
+typedef struct linear_coefficients {
+    double a, b;
+} linear_coefficients;
 
 /**
- * @brief Solves linear equation
+ * @brief Solve equations of the form Ax^2 + Bx + C = 0
  *
- * Solves equations of the form A + Bx + C = 0, where A is equal to zero
+ * @param[in] coefficients
  *
- * @param coefficients the equation's \ref coefficients
- *
- * @return The \ref linear_solution structure
+ * @return solution
  */
-linear_solution solve_linear_equation(coefficients coefficients);
+quadratic_solution solve_equation(quadratic_coefficients coefficients);
 
 /**
- * @brief Solves quadratic equations
+ * @brief Solve equations of the form Ax + B = 0
  *
- * Solves equations of the form Ax^2 + Bx + C = 0, where A is not zero
+ * @param[in] coefficients
  *
- * @param coefficients the equation's \ref coefficients
- *
- * @return The \ref quadratic_solution structure
+ * @return solution
  */
-quadratic_solution solve_quadratic_equation(coefficients coefficients);
+linear_solution solve_linear_equation(linear_coefficients coefficients);
+
+/**
+ * @brief Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero
+ *
+ * @param[in] coefficients
+ *
+ * @return solution
+ */
+quadratic_solution solve_quadratic_equation(quadratic_coefficients coefficients);
 
 #endif // SOLVE_EQUATION_H_
