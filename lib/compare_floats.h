@@ -1,7 +1,6 @@
 #ifndef COMPARE_FLOATS_H_
 #define COMPARE_FLOATS_H_
 
-//! Declaring the precision of the floating-point numbers comparison.
 const float EPSILON = 1e-9f;
 
 /**

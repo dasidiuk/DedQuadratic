@@ -3,7 +3,6 @@
  * @brief Implements the console interface for the \ref solve_equation.h library.
  */
 
-// TODO: get rid of relative paths
 #include "compare_floats.h"
 #include "solve_equation.h"
 #include <assert.h>

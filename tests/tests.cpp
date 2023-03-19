@@ -26,20 +26,20 @@ void do_test(quadratic_coefficients coefficients, quadratic_solution expected)
     if (calculated.solution_type == expected.solution_type && ((!compare_floats(expected.roots[0], calculated.roots[0]) && !compare_floats(expected.roots[1], calculated.roots[1])) || (!compare_floats(expected.roots[0], calculated.roots[1]) && !compare_floats(expected.roots[1], calculated.roots[0])))) {
         switch (calculated.solution_type) {
         case no_roots:
-            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %gx^2 + %gx + %g = 0  ==>  ") TEXT_SUCCESS("%s.\n"), coefficients.a, coefficients.b, coefficients.c, "no roots");
+            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %.9gx^2 %s %.9gx %s %.9g = 0  ==>  ") TEXT_SUCCESS("%s.\n"), coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c), "no roots");
             break;
         case any_value:
-            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %gx^2 + %gx + %g = 0  ==>  ") TEXT_SUCCESS("%s.\n"), coefficients.a, coefficients.b, coefficients.c, "any value");
+            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %.9gx^2 %s %.9gx %s %.9g = 0  ==>  ") TEXT_SUCCESS("%s.\n"), coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c), "any value");
             break;
         case one_root:
-            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %gx^2 + %gx + %g = 0  ==>  ") TEXT_SUCCESS("%s: x = %g.\n"), coefficients.a, coefficients.b, coefficients.c, "one root", calculated.roots[first]);
+            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %.9gx^2 %s %.9gx %s %.9g = 0  ==>  ") TEXT_SUCCESS("%s: x = %g.\n"), coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c), "one root", calculated.roots[first]);
             break;
         case two_roots:
-            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %gx^2 + %gx + %g = 0  ==>  ") TEXT_SUCCESS("%s: x = %g or x = %g.\n"), coefficients.a, coefficients.b, coefficients.c, "two roots", calculated.roots[first], calculated.roots[second]);
+            printf(TEXT_SUCCESS("[    OK    ]") TEXT_BOLD(" %.9gx^2 %s %.9gx %s %.9g = 0  ==>  ") TEXT_SUCCESS("%s: x = %g or x = %g.\n"), coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c), "two roots", calculated.roots[first], calculated.roots[second]);
             break;
         }
     } else {
-        printf(TEXT_ERROR("[  FAILED  ] %gx^2 + %gx + %g = 0") TEXT_BOLD("\nExpected: ") TEXT_INFO("%s: x = %g or x = %g") TEXT_BOLD("\n  Actual: ") TEXT_ERROR("%s: x = %g or x = %g\n\n"), coefficients.a, coefficients.b, coefficients.c, convert_solution_type_to_str(expected.solution_type), expected.roots[first], expected.roots[second], convert_solution_type_to_str(calculated.solution_type), calculated.roots[first], calculated.roots[second]);
+        printf(TEXT_ERROR("[  FAILED  ] %.9gx^2 %s %.9gx %s %.9g = 0") TEXT_BOLD("\nExpected: ") TEXT_INFO("%s: x = %g or x = %g") TEXT_BOLD("\n  Actual: ") TEXT_ERROR("%s: x = %g or x = %g\n\n"), coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c), convert_solution_type_to_str(expected.solution_type), expected.roots[first], expected.roots[second], convert_solution_type_to_str(calculated.solution_type), calculated.roots[first], calculated.roots[second]);
     }
 }
 
