@@ -19,10 +19,11 @@ const char* convert_solution_type_to_str(enum solution_type solution_type)
     }
 }
 
-void do_test(quadratic_coefficients coefficients, quadratic_solution expected)
+void test_equation_solver(quadratic_coefficients coefficients, quadratic_solution expected)
 {
     quadratic_solution calculated = solve_equation(coefficients);
 
+    // TODO: iterate through the roots to validate each of them
     if (calculated.solution_type == expected.solution_type && ((!compare_floats(expected.roots[0], calculated.roots[0]) && !compare_floats(expected.roots[1], calculated.roots[1])) || (!compare_floats(expected.roots[0], calculated.roots[1]) && !compare_floats(expected.roots[1], calculated.roots[0])))) {
         switch (calculated.solution_type) {
         case no_roots:
@@ -43,20 +44,29 @@ void do_test(quadratic_coefficients coefficients, quadratic_solution expected)
     }
 }
 
+typedef struct quadratic_equation_test {
+    quadratic_coefficients coefficients;
+    quadratic_solution solution;
+} quadratic_equation_test;
+
+// TODO:
+// quadratic_equation_test tests[] = {{.coefficients = }}
+// Did I have to? No
+
 int main()
 {
-    do_test({ .a = 0, .b = 0, .c = 0 }, { .solution_type = any_value, .roots = { 0, 0 } });
-    do_test({ .a = 0, .b = 0, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
-    do_test({ .a = 0, .b = 1, .c = 0 }, { .solution_type = one_root, .roots = { 0, 0 } });
-    do_test({ .a = 0, .b = 1, .c = 1 }, { .solution_type = one_root, .roots = { -1, 0 } });
-    do_test({ .a = 1, .b = 0, .c = 0 }, { .solution_type = one_root, .roots = { 0, 0 } });
-    do_test({ .a = 1, .b = 0, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
-    do_test({ .a = 1, .b = 1, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
-    do_test({ .a = 1, .b = 2, .c = 3 }, { .solution_type = no_roots, .roots = { 0, 0 } });
-    do_test({ .a = 3, .b = 2, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
-    do_test({ .a = 1, .b = -3, .c = 2 }, { .solution_type = two_roots, .roots = { 1, 2 } });
-    do_test({ .a = 1, .b = -3, .c = 2 }, { .solution_type = two_roots, .roots = { 1, 2 } });
-    do_test({ .a = 1, .b = 1, .c = -2 }, { .solution_type = two_roots, .roots = { 1, -2 } });
-    do_test({ .a = -0.75, .b = -167.2907655, .c = 15785.7720564555 }, { .solution_type = two_roots, .roots = { 71.464646, -294.519 } });
-    do_test({ .a = 10008.859, .b = 0, .c = -928878435.8986003 }, { .solution_type = two_roots, .roots = { 304.64016, -304.64016 } });
+    test_equation_solver({ .a = 0, .b = 0, .c = 0 }, { .solution_type = any_value, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 0, .b = 0, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 0, .b = 1, .c = 0 }, { .solution_type = one_root, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 0, .b = 1, .c = 1 }, { .solution_type = one_root, .roots = { -1, 0 } });
+    test_equation_solver({ .a = 1, .b = 0, .c = 0 }, { .solution_type = one_root, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 1, .b = 0, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 1, .b = 1, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 1, .b = 2, .c = 3 }, { .solution_type = no_roots, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 3, .b = 2, .c = 1 }, { .solution_type = no_roots, .roots = { 0, 0 } });
+    test_equation_solver({ .a = 1, .b = -3, .c = 2 }, { .solution_type = two_roots, .roots = { 1, 2 } });
+    test_equation_solver({ .a = 1, .b = -3, .c = 2 }, { .solution_type = two_roots, .roots = { 1, 2 } });
+    test_equation_solver({ .a = 1, .b = 1, .c = -2 }, { .solution_type = two_roots, .roots = { 1, -2 } });
+    test_equation_solver({ .a = -0.75, .b = -167.2907655, .c = 15785.7720564555 }, { .solution_type = two_roots, .roots = { 71.464646, -294.519 } });
+    test_equation_solver({ .a = 10008.859, .b = 0, .c = -928878435.8986003 }, { .solution_type = two_roots, .roots = { 304.64016, -304.64016 } });
 }

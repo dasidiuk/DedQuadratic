@@ -16,18 +16,21 @@ quadratic_coefficients read_coefficients()
 
     printf("To solve an equation of the form Ax^2 + Bx + C = 0, enter the coefficients A, B and C, separated by a space:\n");
 
+    // TODO: Validate each coefficient by loop
     if (scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) != 3 || isnan(coefficients.a + coefficients.b + coefficients.c) || isinf(coefficients.a + coefficients.b + coefficients.c)) {
         printf("Invalid input.\n");
-        exit(1);
+        // TODO:
+        __asm__("movq $60, %rax\n"
+                "movq $2 , %rdi\n"
+                "syscall\n");
     }
     return coefficients;
 }
 
 //! Prints the solution depending on it's type
-void print_solution(quadratic_solution solution, quadratic_coefficients coefficients)
+void print_equation_solution(quadratic_solution solution)
 {
-    printf("\nThe equation \033[1m%.9gx^2 %s %.9gx %s %.9g = 0\033[0m ", coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c));
-
+    // TODO: Use loop
     switch (solution.solution_type) {
     case (no_roots):
         printf("has no solutions on the set of real numbers.\n");
@@ -50,11 +53,18 @@ void print_solution(quadratic_solution solution, quadratic_coefficients coeffici
     }
 }
 
+void print_equation(quadratic_coefficients coefficients)
+{
+    printf("\nThe equation \033[1m%.9gx^2 %s %.9gx %s %.9g = 0\033[0m ", coefficients.a, coefficients.b < 0 ? "-" : "+", fabs(coefficients.b), coefficients.c < 0 ? "-" : "+", fabs(coefficients.c));
+}
+
 int main()
 {
     quadratic_coefficients coefficients = read_coefficients();
 
     quadratic_solution solution = solve_equation(coefficients);
 
-    print_solution(solution, coefficients);
+    print_equation(coefficients);
+
+    print_equation_solution(solution);
 }

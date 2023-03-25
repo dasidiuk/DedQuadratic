@@ -20,6 +20,6 @@
  * `cd` to project's directory and then:
  * - `make` to build
  * - `make test` to test
- * - `make exec` to run!
+ * - `make run` to run!
  *
  */

@@ -1,14 +1,14 @@
 #ifndef SOLVE_EQUATION_H_
 #define SOLVE_EQUATION_H_
 
-enum solution_type {
+enum solution_type : char {
     no_roots = 0,
     one_root = 1,
     two_roots = 2,
-    any_value = 3,
+    any_value = -1,
 };
 
-enum roots {
+enum roots : unsigned char {
     first = 0,
     second = 1,
 };
@@ -31,6 +31,7 @@ typedef struct linear_coefficients {
     double a, b;
 } linear_coefficients;
 
+// TODO: White about allowed input
 /**
  * @brief Solve equations of the form Ax^2 + Bx + C = 0
  *
@@ -63,13 +64,13 @@ quadratic_solution solve_quadratic_equation(quadratic_coefficients coefficients)
  *
  * @param[in] coefficients
  */
-void validate_quadratic_coefficients(quadratic_coefficients coefficients);
+void validate_quadratic_coefficients(quadratic_coefficients* coefficients);
 
 /**
  * @brief Validate linear coefficients for NaN and Inf
  *
  * @param[in] coefficients
  */
-void validate_linear_coefficients(linear_coefficients coefficients);
+void validate_linear_coefficients(linear_coefficients* coefficients);
 
 #endif // SOLVE_EQUATION_H_
