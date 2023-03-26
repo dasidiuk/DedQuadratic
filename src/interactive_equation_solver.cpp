@@ -16,14 +16,8 @@ quadratic_coefficients read_coefficients()
 
     printf("To solve an equation of the form Ax^2 + Bx + C = 0, enter the coefficients A, B and C, separated by a space:\n");
 
-    // TODO: Validate each coefficient by loop
-    if (scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) != 3 || isnan(coefficients.a + coefficients.b + coefficients.c) || isinf(coefficients.a + coefficients.b + coefficients.c)) {
-        printf("Invalid input.\n");
-        // TODO:
-        __asm__("movq $60, %rax\n"
-                "movq $2 , %rdi\n"
-                "syscall\n");
-    }
+    assert(scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) == 3 && !isnan(coefficients.a + coefficients.b + coefficients.c) && !isinf(coefficients.a + coefficients.b + coefficients.c) && "Invalid input!");
+
     return coefficients;
 }
 

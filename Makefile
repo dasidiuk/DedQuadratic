@@ -16,7 +16,7 @@ SRCS=$(wildcard $(SRC_DIR)/*.cpp)
 LIBS=$(wildcard $(LIB_DIR)/*.cpp)
 OBJS=$(addprefix $(BUILD_DIR)/,$(patsubst %.cpp,%.o,$(notdir $(LIBS)) $(notdir $(SRCS))))
 TEST_OBJS=$(addprefix $(BUILD_DIR)/,tests.o compare_floats.o solve_equation.o)
-GENERATED=$(wildcard $(BUILD_DIR)/*.o) $(addprefix $(BUILD_DIR)/,check bin) $(DOC_DIR)/html
+GENERATED_FILES=$(wildcard $(BUILD_DIR)/*.o) $(addprefix $(BUILD_DIR)/,check bin) $(DOC_DIR)/html
 TESTS=$(BUILD_DIR)/check
 TARGET=$(BUILD_DIR)/bin
 
@@ -46,9 +46,6 @@ $(DOC_DIR)/html/index.html: $(TARGET)
 #
 # Building tests
 ##
-# TODO: README on GitHub
-# TODO: MIT License
-# TODO: get rid of a generated files in the pero
 $(TESTS): $(TEST_OBJS)
 	$(CXX) $(TEST_OBJS) -o $@
 
@@ -64,6 +61,6 @@ check:
 	$(TESTS)
 
 clean:
-	$(RM) $(GENERATED)
+	$(RM) $(GENERATED_FILES)
 
 # end

@@ -24,18 +24,17 @@ typedef struct linear_solution {
 } linear_solution;
 
 typedef struct quadratic_coefficients {
-    double a, b, c;
+    double a = 0, b = 0, c = 0;
 } quadratic_coefficients;
 
 typedef struct linear_coefficients {
-    double a, b;
+    double a = 0, b = 0;
 } linear_coefficients;
 
-// TODO: White about allowed input
 /**
  * @brief Solve equations of the form Ax^2 + Bx + C = 0
  *
- * @param[in] coefficients
+ * @param[in] coefficients, only real numbers are allowed
  *
  * @return solution
  */
@@ -44,7 +43,7 @@ quadratic_solution solve_equation(quadratic_coefficients coefficients);
 /**
  * @brief Solve equations of the form Ax + B = 0
  *
- * @param[in] coefficients
+ * @param[in] coefficients, only real numbers are allowed
  *
  * @return solution
  */
@@ -53,7 +52,7 @@ linear_solution solve_linear_equation(linear_coefficients coefficients);
 /**
  * @brief Solve equations of the form Ax^2 + Bx + C = 0, where A is not zero
  *
- * @param[in] coefficients
+ * @param[in] coefficients, only real numbers are allowed.
  *
  * @return solution
  */
@@ -62,14 +61,14 @@ quadratic_solution solve_quadratic_equation(quadratic_coefficients coefficients)
 /**
  * @brief Validate quadratic coefficients for NaN and Inf
  *
- * @param[in] coefficients
+ * @param[in] coefficients, only real numbers are allowed.
  */
 void validate_quadratic_coefficients(quadratic_coefficients* coefficients);
 
 /**
  * @brief Validate linear coefficients for NaN and Inf
  *
- * @param[in] coefficients
+ * @param[in] coefficients, only real numbers are allowed.
  */
 void validate_linear_coefficients(linear_coefficients* coefficients);
 
