@@ -10,13 +10,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void clear_buffer()
+{
+    char c;
+
+    do {
+        c = getchar();
+    } while (c != '\n' && c != EOF);
+}
+
 quadratic_coefficients read_coefficients()
 {
     quadratic_coefficients coefficients = { 0, 0, 0 };
 
     printf("To solve an equation of the form Ax^2 + Bx + C = 0, enter the coefficients A, B and C, separated by a space:\n");
 
-    assert(scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) == 3 && !isnan(coefficients.a + coefficients.b + coefficients.c) && !isinf(coefficients.a + coefficients.b + coefficients.c) && "Invalid input!");
+    while (scanf("%lf %lf %lf", &coefficients.a, &coefficients.b, &coefficients.c) != 3 || isnan(coefficients.a + coefficients.b + coefficients.c) || isinf(coefficients.a + coefficients.b + coefficients.c)) {
+        printf("Wrong coefficients! Try again:\n");
+        clear_buffer();
+    }
 
     return coefficients;
 }
@@ -24,7 +36,6 @@ quadratic_coefficients read_coefficients()
 //! Prints the solution depending on it's type
 void print_equation_solution(quadratic_solution solution)
 {
-    // TODO: Use loop
     switch (solution.solution_type) {
     case (no_roots):
         printf("has no solutions on the set of real numbers.\n");
@@ -35,11 +46,15 @@ void print_equation_solution(quadratic_solution solution)
         break;
 
     case (one_root):
-        printf("has one possible solution:\nx = %g\n", solution.roots[first]);
+        printf("has one possible solution:\n");
+        for (int i = 0; i < one_root; i++)
+            printf("x = %g\n", solution.roots[i]);
         break;
 
     case (two_roots):
-        printf("has two possible solutions:\nx = %g or x = %g\n", solution.roots[first], solution.roots[second]);
+        printf("has two possible solutions:\n");
+        for (int i = 0; i < two_roots; i++)
+            printf("x = %g\n", solution.roots[i]);
         break;
 
     default:

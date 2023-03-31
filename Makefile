@@ -52,7 +52,7 @@ $(TESTS): $(TEST_OBJS)
 $(BUILD_DIR)/%.o: $(TESTS_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
-run:
+run: $(TARGET)
 	$(TARGET)
 
 doc: $(DOC_DIR)/html/index.html
