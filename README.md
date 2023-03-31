@@ -18,5 +18,5 @@ Just clone the repo, run `$ git clone https://github.com/Garison1/DedQuadratic`
 
 `$ cd DedQuadratic` to project's directory and then:
 - `$ make` to build
-- `$ make test` to test
+- `$ make check` to test
 - `$ make run` to run!
