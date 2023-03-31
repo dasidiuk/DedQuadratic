@@ -6,10 +6,9 @@ A tool with console interface for solving equations of the form `Ax² + Bx + C =
 
 ## Features
 
-- 🌈 Simple design
-- 🎮 Console interface
+- 🎮 Console UI
 - 🚀 Developed with the desire for efficiency
-- 🧩 Implements some useful libraries
+- 🧩 Implemented some useful libraries
 
 ## Installation
 
@@ -17,7 +16,7 @@ Just clone the repo, run `$ git clone https://github.com/Garison1/DedQuadratic`
 
 ## Usage
 
-`cd` to project's directory and then:
-- `make` to build
-- `make test` to test
-- `make run` to run!
+`$ cd DedQuadratic` to project's directory and then:
+- `$ make` to build
+- `$ make test` to test
+- `$ make run` to run!
