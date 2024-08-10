@@ -2,11 +2,11 @@
 
 ## Introduction
 
-A tool with console interface for solving equations of the form `Ax² + Bx + C = 0` on a set of real numbers.
+A tool with terminal interface for solving equations of the form `Ax² + Bx + C = 0` on a set of real numbers.
 
 ## Features
 
-- 🎮 Console UI
+- 🎮 Terminal UI
 - 🚀 Developed with the desire for efficiency
 - 🧩 Implemented some useful libraries
 
